@@ -17,10 +17,10 @@ const Navbars: React.FC<NavbarsProps> = ({ setShowLogin }) => {
 
     return (
         <div
-            className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 text-gray-600 border-b border-borderColor relative transition-all ${pathname === '/' && 'bg-light'
+            className={`flex items-center justify-between px-3 md:px-12 lg:px-20 xl:px-28 py-4 text-gray-600 border-b border-borderColor relative transition-all ${pathname === '/' && 'bg-light'
                 }`}
         >
-            <Link href="/">
+            <Link href="/" >
                 <Image src={assets.logo} alt="logo" className="h-8" />
             </Link>
 
@@ -59,6 +59,9 @@ const Navbars: React.FC<NavbarsProps> = ({ setShowLogin }) => {
                     </button>
                 </div>
             </div>
+            <button className='sm:hidden cursor-pointer' aria-label='Menu' onClick={() => setOpen(!open)}>
+                <Image src={open ? assets.close_icon : assets.menu_icon} alt='menu' />
+            </button>
         </div>
     )
 }
