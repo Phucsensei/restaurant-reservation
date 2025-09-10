@@ -16,53 +16,141 @@ const Navbars: React.FC<NavbarsProps> = ({ setShowLogin }) => {
     const [open, setOpen] = useState(false)
 
     return (
-        <div
-            className={`flex items-center justify-between px-3 md:px-12 lg:px-20 xl:px-28 py-4 text-gray-600 border-b border-borderColor relative transition-all ${pathname === '/' && 'bg-light'
-                }`}
-        >
-            <Link href="/" >
-                <Image src={assets.logo} alt="logo" className="h-8" />
-            </Link>
-
-            <div
-                className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16
-          max-sm:border-t border-borderColor right-0 flex flex-col sm:flex-row 
-          items-start sm:items-center gap-4 sm:gap-8 max-sm:p-4 
-          transition-all duration-300 z-50
-          ${pathname === '/' ? 'bg-light' : 'bg-white'}
-          ${open ? 'max-sm:translate-x-0' : 'max-sm:-translate-x-full'}`}
-            >
-                {menuLinks.map((link, index) => (
-                    <Link href={link.path} key={index}>
-                        <p>{link.name}</p>
+        <nav className="bg-white shadow-sm border-b border-borderColor sticky top-0 z-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
+                    {/* Logo */}
+                    <Link href="/" className="flex-shrink-0">
+                        <Image src={assets.logo} alt="logo" className="h-8 w-auto" />
                     </Link>
-                ))}
 
-                <div className="hidden lg:flex items-center text-sm gap-2 border border-borderColor px-3 rounded-full max-w-56">
-                    <input
-                        type="text"
-                        className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
-                        placeholder="Tìm kiếm"
-                    />
-                    <Image src={assets.search_icon} alt="search" />
-                </div>
+                    {/* Desktop Menu */}
+                    <div className="hidden md:block">
+                        <div className="ml-10 flex items-baseline space-x-8">
+                            {menuLinks.map((link, index) => (
+                                <Link
+                                    href={link.path}
+                                    key={index}
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${pathname === link.path
+                                        ? 'text-primary bg-primary/10'
+                                        : 'text-black hover:text-primary hover:bg-gray-50'
+                                        }`}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
 
-                <div className="flex max-sm:flex-col items-start sm:items-center gap-6">
-                    <button onClick={() => router.push('/owner')} className="cursor-pointer">
-                        Dashboard
-                    </button>
-                    <button
-                        onClick={() => setShowLogin(true)}
-                        className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all text-white rounded-lg"
-                    >
-                        Login
-                    </button>
+                    {/* Search Bar - Desktop */}
+                    <div className="hidden lg:flex items-center ml-6">
+                        <div className="relative">
+                            <div className="flex items-center border border-borderColor rounded-full px-4 py-2 bg-gray-50 hover:bg-white transition-colors duration-200 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
+                                <input
+                                    type="text"
+                                    className="w-64 bg-transparent outline-none text-sm placeholder-gray-500"
+                                    placeholder="Tìm kiếm..."
+                                />
+                                <Image
+                                    src={assets.search_icon}
+                                    alt="search"
+                                    className="w-4 h-4 text-gray-400 ml-2"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Action Buttons - Desktop */}
+                    <div className="hidden md:flex items-center space-x-4">
+                        <button
+                            onClick={() => router.push('/owner')}
+                            className="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                        >
+                            Dashboard
+                        </button>
+                        <button
+                            onClick={() => setShowLogin(true)}
+                            className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-sm"
+                        >
+                            Login
+                        </button>
+                    </div>
+
+                    {/* Mobile menu button */}
+                    <div className="md:hidden">
+                        <button
+                            onClick={() => setOpen(!open)}
+                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                        >
+                            <Image
+                                src={open ? assets.close_icon : assets.menu_icon}
+                                alt="menu"
+                                className="w-6 h-6"
+                            />
+                        </button>
+                    </div>
                 </div>
             </div>
-            <button className='sm:hidden cursor-pointer' aria-label='Menu' onClick={() => setOpen(!open)}>
-                <Image src={open ? assets.close_icon : assets.menu_icon} alt='menu' />
-            </button>
-        </div>
+
+            {/* Mobile Menu */}
+            {open && (
+                <div className="md:hidden">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-borderColor">
+                        {menuLinks.map((link, index) => (
+                            <Link
+                                href={link.path}
+                                key={index}
+                                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${pathname === link.path
+                                    ? 'text-primary bg-primary/10'
+                                    : 'text-gray-600 hover:text-primary hover:bg-gray-50'
+                                    }`}
+                                onClick={() => setOpen(false)}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+
+                        {/* Mobile Search */}
+                        <div className="px-3 py-2">
+                            <div className="flex items-center border border-borderColor rounded-full px-4 py-2 bg-gray-50">
+                                <input
+                                    type="text"
+                                    className="flex-1 bg-transparent outline-none text-sm placeholder-gray-500"
+                                    placeholder="Tìm kiếm..."
+                                />
+                                <Image
+                                    src={assets.search_icon}
+                                    alt="search"
+                                    className="w-4 h-4 text-gray-400 ml-2"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Mobile Action Buttons */}
+                        <div className="px-3 py-2 space-y-2">
+                            <button
+                                onClick={() => {
+                                    router.push('/owner')
+                                    setOpen(false)
+                                }}
+                                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors duration-200"
+                            >
+                                Dashboard
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setShowLogin(true)
+                                    setOpen(false)
+                                }}
+                                className="block w-full text-center bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-base font-medium transition-colors duration-200"
+                            >
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </nav>
     )
 }
 
