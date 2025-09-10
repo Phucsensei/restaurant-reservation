@@ -1,15 +1,23 @@
 import { Pool } from "pg";
+import dotenv from "dotenv";
 
-// Tạo pool kết nối tới PostgreSQL
+dotenv.config();
+
 const pool = new Pool({
-  user: "postgres",       // thay bằng username của bạn
-  host: "localhost",
-  database: "restaurant_db", // tên database
-  password: "123456",     // mật khẩu của user
-  port: 5432,             // cổng mặc định
+   user: process.env.DB_USER,
+   host: process.env.DB_HOST,
+   database: process.env.DB_NAME,
+   password: process.env.DB_PASSWORD,
+   port: Number(process.env.DB_PORT),
 });
+
+console.log("DB_USER:", process.env.DB_USER);
+console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
+
 
 // Hàm query tiện lợi
 export const query = (text: string, params?: any[]) => {
   return pool.query(text, params);
 };
+
+export default pool;

@@ -1,37 +1,21 @@
 import express from "express";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import cors from "cors";
+import cookieParser from "cookie-parser";
 import { query } from "./db";
+import authRoutes from "./routes/auth";
 
 const app = express();
-const PORT = 4000;
+const port = process.env.PORT;
 
+app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 
-// API test: lấy tất cả reservations
-app.get("/reservations", async (req, res) => {
-  try {
-    const result = await query("SELECT * FROM reservations");
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Lỗi server");
-  }
-});
+app.use("/api/auth", authRoutes);
 
-// API test: thêm 1 reservation
-app.post("/reservations", async (req, res) => {
-  const { name, email } = req.body;
-  try {
-    const result = await query(
-      "INSERT INTO reservations (name, email) VALUES ($1, $2) RETURNING *",
-      [name, email]
-    );
-    res.json(result.rows[0]);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Lỗi server");
-  }
-});
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server chạy tại http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`🚀 Server chạy tại http://localhost:${port}`);
 });
