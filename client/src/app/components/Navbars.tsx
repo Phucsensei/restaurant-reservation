@@ -5,15 +5,20 @@ import { assets, menuLinks } from '../assets/assets'
 import Link from 'next/link'
 import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
+import { useAuth } from '@/contexts/auth.context'
 
-interface NavbarsProps {
-    setShowLogin: (show: boolean) => void
-}
-
-const Navbars: React.FC<NavbarsProps> = ({ setShowLogin }) => {
+const Navbars = () => {
     const router = useRouter()
     const pathname = usePathname()
     const [open, setOpen] = useState(false)
+    const { user, logout } = useAuth()
+    const [showProfileMenu, setShowProfileMenu] = useState(false)
+
+    const handleLogout = () => {
+        logout()
+        router.push('/login')
+        setShowProfileMenu(false)
+    }
 
     return (
         <nav className="bg-white shadow-sm border-b border-borderColor sticky top-0 z-50">
@@ -68,12 +73,43 @@ const Navbars: React.FC<NavbarsProps> = ({ setShowLogin }) => {
                         >
                             Dashboard
                         </button>
-                        <button
-                            onClick={() => setShowLogin(true)}
-                            className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-sm"
-                        >
-                            Login
-                        </button>
+
+                        {user ? (
+                            <div className="relative">
+                                <button
+                                    onClick={() => setShowProfileMenu(!showProfileMenu)}
+                                    className="flex items-center space-x-3 focus:outline-none"
+                                >
+                                    <div className="flex items-center space-x-2">
+                                        <span className="text-sm font-medium text-gray-700">{user.email}</span>
+                                        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                                            <span className="text-sm font-medium text-gray-600">
+                                                {user.email[0].toUpperCase()}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </button>
+
+                                {/* Profile Dropdown */}
+                                {showProfileMenu && (
+                                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5">
+                                        <button
+                                            onClick={handleLogout}
+                                            className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                        >
+                                            Logout
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <button
+                                onClick={() => router.push('/login')}
+                                className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-sm"
+                            >
+                                Login
+                            </button>
+                        )}
                     </div>
 
                     {/* Mobile menu button */}
@@ -137,15 +173,43 @@ const Navbars: React.FC<NavbarsProps> = ({ setShowLogin }) => {
                             >
                                 Dashboard
                             </button>
-                            <button
-                                onClick={() => {
-                                    setShowLogin(true)
-                                    setOpen(false)
-                                }}
-                                className="block w-full text-center bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-base font-medium transition-colors duration-200"
-                            >
-                                Login
-                            </button>
+
+                            {user ? (
+                                <>
+                                    {/* User Profile - Mobile */}
+                                    <div className="px-3 py-2 flex items-center space-x-3">
+                                        <div className="flex items-center space-x-2">
+                                            <span className="text-sm font-medium text-gray-700">{user.email}</span>
+                                            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                                                <span className="text-sm font-medium text-gray-600">
+                                                    {user.email[0].toUpperCase()}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logout Button - Mobile */}
+                                    <button
+                                        onClick={() => {
+                                            handleLogout()
+                                            setOpen(false)
+                                        }}
+                                        className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-red-600 hover:bg-red-50 transition-colors duration-200"
+                                    >
+                                        Logout
+                                    </button>
+                                </>
+                            ) : (
+                                <button
+                                    onClick={() => {
+                                        router.push('/login')
+                                        setOpen(false)
+                                    }}
+                                    className="block w-full text-center bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-base font-medium transition-colors duration-200"
+                                >
+                                    Login
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>

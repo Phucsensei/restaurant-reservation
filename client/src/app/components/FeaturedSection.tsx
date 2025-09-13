@@ -29,8 +29,8 @@ const FeaturedSection = () => {
 
             <button
                 onClick={() => {
-                    router.push('/cars')   // ✅ điều hướng
-                    window.scrollTo(0, 0)  // ✅ cuộn lên đầu trang
+                    router.push('/cars')
+                    window.scrollTo(0, 0)
                 }}
                 className='flex items-center justify-center gap-2 px-6 py-2 border border-borderColor hover:bg-gray-50 rounded-md mt-18 cursor-pointer'>
                 Explore More
