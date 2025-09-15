@@ -1,22 +1,21 @@
 'use client'
 
-
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import { User } from '@/types/auth'
 import { authService } from '@/services/auth.service'
 
 interface AuthContextType {
-    user: User | null;
-    loading: boolean;
-    login: (user: User) => void;
-    logout: () => void;
+    user: User | null
+    loading: boolean
+    login: (user: User) => void
+    logout: () => void
 }
 
 const AuthContext = createContext<AuthContextType>({
     user: null,
     loading: true,
     login: () => { },
-    logout: () => { },
+    logout: () => { }
 })
 
 export const useAuth = () => useContext(AuthContext)
@@ -26,14 +25,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        // Kiểm tra token và lấy thông tin user khi mount
         const token = authService.getAccessToken()
         if (token) {
-            // Có thể thêm logic verify token ở đây
-            setLoading(false)
-        } else {
-            setLoading(false)
+            const tokenData = JSON.parse(atob(token.split('.')[1]))
+            setUser({
+                email: tokenData.email,
+                id: tokenData.sub,
+                name: tokenData.name || tokenData.email
+            })
         }
+        setLoading(false)
     }, [])
 
     const login = (userData: User) => {

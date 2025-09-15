@@ -8,8 +8,8 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useAuth } from '@/contexts/auth.context'
 
 const Navbars = () => {
-    const router = useRouter()
     const pathname = usePathname()
+    const router = useRouter()
     const [open, setOpen] = useState(false)
     const { user, logout } = useAuth()
     const [showProfileMenu, setShowProfileMenu] = useState(false)
@@ -24,12 +24,10 @@ const Navbars = () => {
         <nav className="bg-white shadow-sm border-b border-borderColor sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
                     <Link href="/" className="flex-shrink-0">
                         <Image src={assets.logo} alt="logo" className="h-8 w-auto" />
                     </Link>
 
-                    {/* Desktop Menu */}
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-8">
                             {menuLinks.map((link, index) => (
@@ -47,7 +45,6 @@ const Navbars = () => {
                         </div>
                     </div>
 
-                    {/* Search Bar - Desktop */}
                     <div className="hidden lg:flex items-center ml-6">
                         <div className="relative">
                             <div className="flex items-center border border-borderColor rounded-full px-4 py-2 bg-gray-50 hover:bg-white transition-colors duration-200 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
@@ -65,7 +62,6 @@ const Navbars = () => {
                         </div>
                     </div>
 
-                    {/* Action Buttons - Desktop */}
                     <div className="hidden md:flex items-center space-x-4">
                         <button
                             onClick={() => router.push('/owner')}
@@ -90,7 +86,6 @@ const Navbars = () => {
                                     </div>
                                 </button>
 
-                                {/* Profile Dropdown */}
                                 {showProfileMenu && (
                                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5">
                                         <button
@@ -112,7 +107,6 @@ const Navbars = () => {
                         )}
                     </div>
 
-                    {/* Mobile menu button */}
                     <div className="md:hidden">
                         <button
                             onClick={() => setOpen(!open)}
@@ -128,7 +122,6 @@ const Navbars = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
             {open && (
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-borderColor">
@@ -146,7 +139,6 @@ const Navbars = () => {
                             </Link>
                         ))}
 
-                        {/* Mobile Search */}
                         <div className="px-3 py-2">
                             <div className="flex items-center border border-borderColor rounded-full px-4 py-2 bg-gray-50">
                                 <input
@@ -162,7 +154,6 @@ const Navbars = () => {
                             </div>
                         </div>
 
-                        {/* Mobile Action Buttons */}
                         <div className="px-3 py-2 space-y-2">
                             <button
                                 onClick={() => {
@@ -176,7 +167,6 @@ const Navbars = () => {
 
                             {user ? (
                                 <>
-                                    {/* User Profile - Mobile */}
                                     <div className="px-3 py-2 flex items-center space-x-3">
                                         <div className="flex items-center space-x-2">
                                             <span className="text-sm font-medium text-gray-700">{user.email}</span>
@@ -188,7 +178,6 @@ const Navbars = () => {
                                         </div>
                                     </div>
 
-                                    {/* Logout Button - Mobile */}
                                     <button
                                         onClick={() => {
                                             handleLogout()

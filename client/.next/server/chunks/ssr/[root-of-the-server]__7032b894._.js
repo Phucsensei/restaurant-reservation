@@ -12,7 +12,7 @@ __turbopack_context__.s([
     "authService",
     ()=>authService
 ]);
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const API_URL = ("TURBOPACK compile-time value", "http://localhost:3001/api");
 const authService = {
     async login (credentials) {
         const response = await fetch(`${API_URL}/auth/login`, {

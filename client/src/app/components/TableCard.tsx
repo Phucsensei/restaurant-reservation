@@ -1,9 +1,11 @@
 import Image, { type StaticImageData } from 'next/image'
+import { useRouter } from 'next/navigation'
 import { assets } from '../assets/assets'
 
 const currentPrice = process.env.NEXT_PUBLIC_PRICE
 
 interface CarItem {
+    _id: string
     image: string | StaticImageData
     brand: string
     model: string
@@ -21,8 +23,16 @@ interface TableCardProps {
 }
 
 const TableCard: React.FC<TableCardProps> = ({ car }) => {
+    const router = useRouter()
+
+    const handleCardClick = () => {
+        router.push(`/table-details/${car._id}`)
+    }
+
     return (
-        <div className='group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer'>
+        <div
+            onClick={handleCardClick}
+            className='group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer'>
             <div className='relative h-48 overflow-hidden'>
                 <Image src={car.image} alt={car.brand} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105' />
 

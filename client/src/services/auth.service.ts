@@ -9,7 +9,7 @@ export const authService = {
       headers: {
         'Content-Type': 'application/json',
       },
-      credentials: 'include', // Để nhận cookie từ server
+      credentials: 'include',
       body: JSON.stringify(credentials),
     })
 
@@ -19,7 +19,6 @@ export const authService = {
       throw new Error(data.message || 'Login failed')
     }
 
-    // Lưu token vào localStorage
     if (data.accessToken) {
       localStorage.setItem('accessToken', data.accessToken)
     }
@@ -47,7 +46,6 @@ export const authService = {
 
   logout() {
     localStorage.removeItem('accessToken')
-    // Có thể thêm call API để invalidate token ở server
   },
 
   getAccessToken() {
