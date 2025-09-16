@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":["file:///E:/Reversation/reservation/client/src/app/admin/layout.tsx"],"sourcesContent":["// 'use client'\r\n\r\n// import React from 'react'\r\n// import Sidebar from '../components/Admin/Sidebar'\r\n// import NarbarAdmin from '../components/Admin/NarbarAdmin'\r\n\r\n// export default function AdminLayout({ children }: { children: React.ReactNode }) {\r\n//     return (\r\n//         <div className='flex flex-col'>\r\n//             <NarbarAdmin />\r\n//             <div className='flex'>\r\n//                 <Sidebar />\r\n//                 <main className='p-6 flex-1'>\r\n//                     {children}\r\n//                 </main>\r\n//             </div>\r\n//         </div>\r\n//     )\r\n// }"],"names":[],"mappings":"AAAA,eAAe;AAEf,4BAA4B;AAC5B,oDAAoD;AACpD,4DAA4D;AAE5D,qFAAqF;AACrF,eAAe;AACf,0CAA0C;AAC1C,8BAA8B;AAC9B,qCAAqC;AACrC,8BAA8B;AAC9B,gDAAgD;AAChD,iCAAiC;AACjC,0BAA0B;AAC1B,qBAAqB;AACrB,iBAAiB;AACjB,QAAQ;AACR,IAAI","debugId":null}}]
+}

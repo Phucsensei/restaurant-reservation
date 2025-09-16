@@ -2,8 +2,8 @@
 
 import { usePathname } from 'next/navigation'
 import Navbars from './components/Navbars'
+import ProtectedRoute from '@/app/components/ProtectedRoute'
 import Footer from './components/Footer'
-import ProtectedRoute from '@/components/ProtectedRoute'
 
 export default function ClientLayout({
     children,
@@ -12,11 +12,12 @@ export default function ClientLayout({
 }) {
     const pathname = usePathname()
     const isPublicPath = pathname.startsWith('/owner') ||
+        pathname.startsWith('/admin') ||
         pathname === '/login' ||
         pathname === '/register'
 
     if (isPublicPath) {
-        return <ProtectedRoute>{children}</ProtectedRoute>
+        return children
     }
 
     return (
