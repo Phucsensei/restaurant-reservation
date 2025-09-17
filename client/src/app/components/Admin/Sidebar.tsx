@@ -1,6 +1,6 @@
 'use client'
 
-import { assets, dummyCarData, ownerMenuLinks } from '@/app/assets/assets'
+import { assets, dummyTableData, ownerMenuLinks } from '@/app/assets/assets'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -8,10 +8,17 @@ import { useState } from 'react'
 
 const Sidebar = () => {
     const pathname = usePathname()
+
+    const isActive = (path: string) => {
+        if (path === '/admin/dashboard') {
+            return pathname === '/admin' || pathname === '/admin/dashboard'
+        }
+        return pathname === path
+    }
     const [image, setImage] = useState<string | File>('')
     const user = {
         name: 'Admin User',
-        image: dummyCarData[0].image
+        image: dummyTableData[0].image
     }
 
     const updateImage = async () => {
@@ -23,60 +30,70 @@ const Sidebar = () => {
     }
 
     return (
-        <div className='relative min-h-screen md:flex flex-col items-center pt-8 max-w-13 md:max-w-60 w-full border-r border-borderColor text-sm'>
-            <div className='group relative'>
-                <label htmlFor='image' className='cursor-pointer'>
+        <div className="relative min-h-screen md:flex flex-col items-center pt-10 max-w-16 md:max-w-64 w-full border-r border-gray-200 bg-white shadow-sm text-sm">
+            {/* Avatar */}
+            <div className="group relative">
+                <label htmlFor="image" className="cursor-pointer block">
                     <Image
                         src={image instanceof File ? URL.createObjectURL(image) : user?.image}
-                        alt='profile'
-                        width={80}
-                        height={80}
-                        className="rounded-full h-9 md:h-14 w-9 md:w-14 mx-auto"
+                        alt="profile"
+                        width={100}
+                        height={100}
+                        className="rounded-full h-14 md:h-20 w-14 md:w-20 mx-auto border-2 border-primary shadow-md object-cover"
                     />
                     <input
-                        type='file'
-                        id='image'
-                        accept='image/*'
+                        type="file"
+                        id="image"
+                        accept="image/*"
                         hidden
                         onChange={e => e.target.files?.[0] && setImage(e.target.files[0])}
                     />
-
-                    <div className='absolute hidden top-0 right-0 left-0 bottom-0 bg-black/10 rounded-full group-hover:flex items-center justify-center'>
-                        <Image src={assets.edit_icon} alt='edit' width={20} height={20} />
+                    <div className="absolute hidden top-0 right-0 left-0 bottom-0 bg-black/30 rounded-full group-hover:flex items-center justify-center">
+                        <Image src={assets.edit_icon} alt="edit" width={22} height={22} />
                     </div>
                 </label>
             </div>
 
+            {/* Save Button */}
             {image instanceof File && (
                 <button
                     onClick={updateImage}
-                    className='absolute top-0 right-0 flex p-2 gap-1 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors'
+                    className="mt-3 px-4 py-1.5 flex items-center gap-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all shadow-sm text-xs"
                 >
                     Save
-                    <Image src={assets.check_icon} alt='save' width={13} height={13} />
+                    <Image src={assets.check_icon} alt="save" width={13} height={13} />
                 </button>
             )}
 
-            <p className='mt-2 text-base max-md:hidden'>{user?.name}</p>
+            {/* User name */}
+            <p className="mt-3 text-base font-medium text-gray-800 max-md:hidden">
+                {user?.name}
+            </p>
 
-            <div className='w-full mt-6'>
-                {ownerMenuLinks.map((link, index) => (
-                    <Link
-                        key={index}
-                        href={link.path}
-                        className={`relative flex items-center gap-2 w-full py-3 pl-4 hover:bg-primary/5 transition-colors
-                            ${pathname === link.path ? 'bg-primary/10 text-primary' : 'text-gray-600'}`}
-                    >
-                        <Image
-                            src={pathname === link.path ? link.coloredIcon : link.icon}
-                            alt={link.name}
-                            width={13}
-                            height={13}
-                        />
-                        <span className='max-md:hidden'>{link.name}</span>
-                        <div className={`${pathname === link.path ? 'bg-primary' : ''} w-1.5 h-8 rounded-l absolute right-0`} />
-                    </Link>
-                ))}
+            {/* Navigation */}
+            <div className="w-full mt-8 space-y-1">
+                {ownerMenuLinks.map((link, index) => {
+                    const active = isActive(link.path)
+                    return (
+                        <Link
+                            key={index}
+                            href={link.path}
+                            className={`relative flex items-center gap-3 w-full py-3 pl-6 pr-3 transition-all
+                                ${active
+                                    ? 'bg-primary/10 text-primary font-medium border-r-4 border-primary'
+                                    : 'text-gray-600 hover:bg-blue-50 hover:text-primary'
+                                }`}
+                        >
+                            <Image
+                                src={active ? link.coloredIcon : link.icon}
+                                alt={link.name}
+                                width={18}
+                                height={18}
+                            />
+                            <span className="max-md:hidden">{link.name}</span>
+                        </Link>
+                    )
+                })}
             </div>
         </div>
     )
