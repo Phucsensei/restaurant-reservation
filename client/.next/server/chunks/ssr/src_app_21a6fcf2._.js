@@ -21,10 +21,16 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 const Sidebar = ()=>{
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["usePathname"])();
+    const isActive = (path)=>{
+        if (path === '/admin/dashboard') {
+            return pathname === '/admin' || pathname === '/admin/dashboard';
+        }
+        return pathname === path;
+    };
     const [image, setImage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const user = {
         name: 'Admin User',
-        image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$assets$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["dummyCarData"][0].image
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$assets$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["dummyTableData"][0].image
     };
     const updateImage = async ()=>{
         if (image instanceof File) {
@@ -34,23 +40,23 @@ const Sidebar = ()=>{
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative min-h-screen md:flex flex-col items-center pt-8 max-w-13 md:max-w-60 w-full border-r border-borderColor text-sm",
+        className: "relative min-h-screen md:flex flex-col items-center pt-10 max-w-16 md:max-w-64 w-full border-r border-gray-200 bg-white shadow-sm text-sm",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "group relative",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                     htmlFor: "image",
-                    className: "cursor-pointer",
+                    className: "cursor-pointer block",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             src: image instanceof File ? URL.createObjectURL(image) : user?.image,
                             alt: "profile",
-                            width: 80,
-                            height: 80,
-                            className: "rounded-full h-9 md:h-14 w-9 md:w-14 mx-auto"
+                            width: 100,
+                            height: 100,
+                            className: "rounded-full h-14 md:h-20 w-14 md:w-20 mx-auto border-2 border-primary shadow-md object-cover"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                            lineNumber: 29,
+                            lineNumber: 37,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -61,40 +67,40 @@ const Sidebar = ()=>{
                             onChange: (e)=>e.target.files?.[0] && setImage(e.target.files[0])
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                            lineNumber: 36,
+                            lineNumber: 44,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute hidden top-0 right-0 left-0 bottom-0 bg-black/10 rounded-full group-hover:flex items-center justify-center",
+                            className: "absolute hidden top-0 right-0 left-0 bottom-0 bg-black/30 rounded-full group-hover:flex items-center justify-center",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$assets$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["assets"].edit_icon,
                                 alt: "edit",
-                                width: 20,
-                                height: 20
+                                width: 22,
+                                height: 22
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                                lineNumber: 45,
+                                lineNumber: 52,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                            lineNumber: 44,
+                            lineNumber: 51,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                    lineNumber: 28,
+                    lineNumber: 36,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                lineNumber: 27,
+                lineNumber: 35,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             image instanceof File && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: updateImage,
-                className: "absolute top-0 right-0 flex p-2 gap-1 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors",
+                className: "mt-3 px-4 py-1.5 flex items-center gap-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all shadow-sm text-xs",
                 children: [
                     "Save",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -104,70 +110,66 @@ const Sidebar = ()=>{
                         height: 13
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                        lineNumber: 56,
+                        lineNumber: 64,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                lineNumber: 51,
+                lineNumber: 59,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "mt-2 text-base max-md:hidden",
+                className: "mt-3 text-base font-medium text-gray-800 max-md:hidden",
                 children: user?.name
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                lineNumber: 60,
+                lineNumber: 69,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-full mt-6",
-                children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$assets$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ownerMenuLinks"].map((link, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                className: "w-full mt-8 space-y-1",
+                children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$assets$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ownerMenuLinks"].map((link, index)=>{
+                    const active = isActive(link.path);
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: link.path,
-                        className: `relative flex items-center gap-2 w-full py-3 pl-4 hover:bg-primary/5 transition-colors
-                            ${pathname === link.path ? 'bg-primary/10 text-primary' : 'text-gray-600'}`,
+                        className: `relative flex items-center gap-3 w-full py-3 pl-6 pr-3 transition-all
+                                ${active ? 'bg-primary/10 text-primary font-medium border-r-4 border-primary' : 'text-gray-600 hover:bg-blue-50 hover:text-primary'}`,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                src: pathname === link.path ? link.coloredIcon : link.icon,
+                                src: active ? link.coloredIcon : link.icon,
                                 alt: link.name,
-                                width: 13,
-                                height: 13
+                                width: 18,
+                                height: 18
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                                lineNumber: 70,
-                                columnNumber: 25
+                                lineNumber: 87,
+                                columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "max-md:hidden",
                                 children: link.name
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                                lineNumber: 76,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: `${pathname === link.path ? 'bg-primary' : ''} w-1.5 h-8 rounded-l absolute right-0`
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                                lineNumber: 77,
-                                columnNumber: 25
+                                lineNumber: 93,
+                                columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, index, true, {
                         fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                        lineNumber: 64,
-                        columnNumber: 21
-                    }, ("TURBOPACK compile-time value", void 0)))
+                        lineNumber: 78,
+                        columnNumber: 25
+                    }, ("TURBOPACK compile-time value", void 0));
+                })
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-                lineNumber: 62,
+                lineNumber: 74,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/Admin/Sidebar.tsx",
-        lineNumber: 26,
+        lineNumber: 33,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -190,7 +192,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 const NarbarAdmin = ()=>{
-    const user = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$assets$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["dummyCarData"][0] // hoặc lấy từ context/auth nếu có
+    const user = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$assets$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["dummyTableData"][0] // hoặc lấy từ context/auth nếu có
     ;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex items-center justify-between px-6 md:px-10 py-4 text-gray-500 border-b border-borderColor relative transition-all",

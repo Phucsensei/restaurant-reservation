@@ -1012,12 +1012,12 @@ __turbopack_context__.s([
     ()=>assets,
     "cityList",
     ()=>cityList,
-    "dummyCarData",
-    ()=>dummyCarData,
     "dummyDashboardData",
     ()=>dummyDashboardData,
-    "dummyMyBookingsData",
-    ()=>dummyMyBookingsData,
+    "dummyReservationsData",
+    ()=>dummyReservationsData,
+    "dummyTableData",
+    ()=>dummyTableData,
     "dummyUserData",
     ()=>dummyUserData,
     "menuLinks",
@@ -1169,7 +1169,7 @@ const menuLinks = [
     },
     {
         name: 'Booking',
-        path: '/cars'
+        path: '/reservations'
     },
     {
         name: 'My Bookings',
@@ -1179,27 +1179,27 @@ const menuLinks = [
 const ownerMenuLinks = [
     {
         name: 'Dashboard',
-        path: '/owner',
+        path: '/admin/dashboard',
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$dashboardIcon$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$dashboardIcon$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
         coloredIcon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$dashboardIconColored$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$dashboardIconColored$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"]
     },
     {
-        name: 'Add car',
-        path: '/owner/add-car',
+        name: 'Add Table',
+        path: '/admin/add-table',
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$addIcon$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$addIcon$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
         coloredIcon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$addIconColored$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$addIconColored$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"]
     },
     {
-        name: 'Manage Cars',
-        path: '/owner/manage-cars',
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$carIcon$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$carIcon$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
-        coloredIcon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$carIconColored$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$carIconColored$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"]
-    },
-    {
-        name: 'Manage Bookings',
-        path: '/owner/manage-bookings',
+        name: 'Manage Tables',
+        path: '/admin/manage-tables',
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$listIcon$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$listIcon$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
         coloredIcon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$listIconColored$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$listIconColored$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"]
+    },
+    {
+        name: 'Reservations',
+        path: '/admin/reservations',
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$calendar_icon_colored$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$calendar_icon_colored$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+        coloredIcon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$calendar_icon_colored$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$calendar_icon_colored$2e$svg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"]
     }
 ];
 const dummyUserData = {
@@ -1209,132 +1209,132 @@ const dummyUserData = {
     'role': 'owner',
     'image': __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$user_profile$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$user_profile$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"]
 };
-const dummyCarData = [
+const dummyTableData = [
     {
         '_id': '67ff5bc069c03d4e45f30b77',
-        'owner': '67fe3467ed8a8fe17d0ba6e2',
-        'brand': 'BMW',
-        'model': 'X5',
+        'number': 'T01',
+        'capacity': 4,
+        'section': 'Main Hall',
         'image': __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$car_image1$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$car_image1$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
-        'year': 2006,
-        'category': 'SUV',
-        'seating_capacity': 4,
-        'fuel_type': 'Hybrid',
-        'transmission': 'Semi-Automatic',
-        'pricePerDay': 300,
-        'location': 'New York',
-        'description': 'The BMW X5 is a mid-size luxury SUV produced by BMW. The X5 made its debut in 1999 as the first SUV ever produced by BMW.',
-        'isAvaliable': true,
+        'type': 'Standard',
+        'isWindow': true,
+        'pricePerSlot': 50,
+        'location': 'Ground Floor',
+        'description': 'Beautiful window-side table perfect for couples and small groups, with a scenic view of the garden.',
+        'isAvailable': true,
         'createdAt': '2025-04-16T07:26:56.215Z'
     },
     {
         '_id': '67ff6b758f1b3684286a2a65',
-        'owner': '67fe3467ed8a8fe17d0ba6e2',
-        'brand': 'Toyota',
-        'model': 'Corolla',
+        'number': 'T02',
+        'capacity': 6,
+        'section': 'Main Hall',
         'image': __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$car_image2$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$car_image2$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
-        'year': 2021,
-        'category': 'Sedan',
-        'seating_capacity': 4,
-        'fuel_type': 'Diesel',
-        'transmission': 'Manual',
-        'pricePerDay': 130,
-        'location': 'Chicago',
-        'description': 'The Toyota Corolla is a mid-size luxury sedan produced by Toyota. The Corolla made its debut in 2008 as the first sedan ever produced by Toyota.',
-        'isAvaliable': true,
+        'type': 'Family',
+        'isWindow': false,
+        'pricePerSlot': 80,
+        'location': 'Ground Floor',
+        'description': 'Spacious family table in a quiet corner, ideal for family gatherings and group dining.',
+        'isAvailable': true,
         'createdAt': '2025-04-16T08:33:57.993Z'
     },
     {
         '_id': '67ff6b9f8f1b3684286a2a68',
-        'owner': '67fe3467ed8a8fe17d0ba6e2',
-        'brand': 'Jeep ',
-        'model': 'Wrangler',
+        'number': 'T03',
+        'capacity': 2,
+        'section': 'Terrace',
         'image': __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$car_image3$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$car_image3$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
-        'year': 2023,
-        'category': 'SUV',
-        'seating_capacity': 4,
-        'fuel_type': 'Hybrid',
-        'transmission': 'Automatic',
-        'pricePerDay': 200,
-        'location': 'Los Angeles',
-        'description': 'The Jeep Wrangler is a mid-size luxury SUV produced by Jeep. The Wrangler made its debut in 2003 as the first SUV ever produced by Jeep.',
-        'isAvaliable': true,
+        'type': 'Premium',
+        'isWindow': true,
+        'pricePerSlot': 100,
+        'location': 'Rooftop',
+        'description': 'Exclusive rooftop table with panoramic city views, perfect for romantic dinners.',
+        'isAvailable': true,
         'createdAt': '2025-04-16T08:34:39.592Z'
     },
     {
         '_id': '68009c93a3f5fc6338ea7e34',
-        'owner': '67fe3467ed8a8fe17d0ba6e2',
-        'brand': 'Ford',
-        'model': 'Neo 6',
+        'number': 'T04',
+        'capacity': 8,
+        'section': 'Private Room',
         'image': __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$assets$2f$car_image4$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$app$2f$assets$2f$car_image4$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
-        'year': 2022,
-        'category': 'Sedan',
-        'seating_capacity': 2,
-        'fuel_type': 'Diesel',
-        'transmission': 'Semi-Automatic',
-        'pricePerDay': 209,
-        'location': 'Houston',
-        'description': 'This is a mid-size luxury sedan produced by Toyota. The Corolla made its debut in 2008 as the first sedan ever produced by Toyota.',
-        'isAvaliable': true,
+        'type': 'VIP',
+        'isWindow': false,
+        'pricePerSlot': 150,
+        'location': 'First Floor',
+        'description': 'Private dining room with dedicated service, perfect for business meetings or special celebrations.',
+        'isAvailable': true,
         'createdAt': '2025-04-17T06:15:47.318Z'
     }
 ];
-const dummyMyBookingsData = [
+const dummyReservationsData = [
     {
         '_id': '68482bcc98eb9722b7751f70',
-        'car': dummyCarData[0],
+        'table': dummyTableData[0],
         'user': '6847f7cab3d8daecdb517095',
-        'owner': '6847f7cab3d8daecdb517095',
-        'pickupDate': '2025-06-13T00:00:00.000Z',
-        'returnDate': '2025-06-14T00:00:00.000Z',
+        'customerName': 'John Smith',
+        'customerPhone': '+1234567890',
+        'numberOfGuests': 3,
+        'date': '2025-06-13T19:00:00.000Z',
+        'duration': 2,
+        'specialRequests': 'Birthday celebration, window seat preferred',
         'status': 'confirmed',
-        'price': 440,
+        'price': 100,
         'createdAt': '2025-06-10T12:57:48.244Z'
     },
     {
         '_id': '68482bb598eb9722b7751f60',
-        'car': dummyCarData[1],
+        'table': dummyTableData[1],
         'user': '6847f7cab3d8daecdb517095',
-        'owner': '67fe3467ed8a8fe17d0ba6e2',
-        'pickupDate': '2025-06-12T00:00:00.000Z',
-        'returnDate': '2025-06-12T00:00:00.000Z',
+        'customerName': 'Sarah Johnson',
+        'customerPhone': '+1234567891',
+        'numberOfGuests': 5,
+        'date': '2025-06-12T18:30:00.000Z',
+        'duration': 2.5,
+        'specialRequests': 'Vegetarian menu options needed',
         'status': 'pending',
-        'price': 130,
+        'price': 200,
         'createdAt': '2025-06-10T12:57:25.613Z'
     },
     {
         '_id': '684800fa0fb481c5cfd92e56',
-        'car': dummyCarData[2],
+        'table': dummyTableData[2],
         'user': '6847f7cab3d8daecdb517095',
-        'owner': '67fe3467ed8a8fe17d0ba6e2',
-        'pickupDate': '2025-06-11T00:00:00.000Z',
-        'returnDate': '2025-06-12T00:00:00.000Z',
+        'customerName': 'Michael Brown',
+        'customerPhone': '+1234567892',
+        'numberOfGuests': 2,
+        'date': '2025-06-11T20:00:00.000Z',
+        'duration': 1.5,
+        'specialRequests': 'Anniversary celebration',
         'status': 'pending',
-        'price': 600,
+        'price': 150,
         'createdAt': '2025-06-10T09:55:06.379Z'
     },
     {
         '_id': '6847fe790fb481c5cfd92d94',
-        'car': dummyCarData[3],
+        'table': dummyTableData[3],
         'user': '6847f7cab3d8daecdb517095',
-        'owner': '6847f7cab3d8daecdb517095',
-        'pickupDate': '2025-06-11T00:00:00.000Z',
-        'returnDate': '2025-06-12T00:00:00.000Z',
+        'customerName': 'Emily Davis',
+        'customerPhone': '+1234567893',
+        'numberOfGuests': 7,
+        'date': '2025-06-11T19:30:00.000Z',
+        'duration': 3,
+        'specialRequests': 'Business dinner, need projector setup',
         'status': 'confirmed',
-        'price': 440,
+        'price': 450,
         'createdAt': '2025-06-10T09:44:25.410Z'
     }
 ];
 const dummyDashboardData = {
-    'totalCars': 4,
-    'totalBookings': 2,
-    'pendingBookings': 0,
-    'completedBookings': 2,
+    'totalTables': 4,
+    'totalReservations': 8,
+    'pendingReservations': 2,
+    'availableTables': 3,
     'recentBookings': [
-        dummyMyBookingsData[0],
-        dummyMyBookingsData[1]
+        dummyReservationsData[0],
+        dummyReservationsData[1]
     ],
-    'monthlyRevenue': 840
+    'monthlyRevenue': 2500
 };
 }),
 "[project]/src/app/components/Navbars.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {

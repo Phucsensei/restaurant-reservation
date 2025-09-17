@@ -2,7 +2,7 @@
 
 import { useParams, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import { assets, dummyCarData } from '../../assets/assets'
+import { assets, dummyTableData } from '../../assets/assets'
 import Image from 'next/image'
 import Loader from '../../components/Loader'
 
@@ -36,7 +36,7 @@ const TableDetails = () => {
 
     useEffect(() => {
         if (id) {
-            const foundTable = dummyCarData.find((table) => table._id === id)
+            const foundTable = dummyTableData.find((table) => table._id === id)
             setTable(foundTable || null)
         }
     }, [id])
