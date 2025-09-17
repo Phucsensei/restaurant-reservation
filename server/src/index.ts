@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 
 // routes
 import authRoutes from "./routes/auth.routes";
+import tableRoutes from "./routes/table.routes";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
+app.use("/api/tables", tableRoutes);
 
 app.listen(port, () => {
   console.log(`🚀 Server chạy tại http://localhost:${port}`);

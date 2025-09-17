@@ -315,20 +315,12 @@ const TableCard = (param)=>{
                         lineNumber: 37,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
-                    table.isWindow && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "absolute top-4 left-4 bg-blue-500/90 text-white text-xs px-2.5 py-1 rounded-full",
-                        children: "Window View"
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/components/TableCard.tsx",
-                        lineNumber: 40,
-                        columnNumber: 21
-                    }, ("TURBOPACK compile-time value", void 0)),
                     table.isAvailable && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "absolute top-4 right-4 bg-green-500/90 text-white text-xs px-2.5 py-1 rounded-full",
                         children: "Available Now"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/TableCard.tsx",
-                        lineNumber: 46,
+                        lineNumber: 42,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -342,7 +334,7 @@ const TableCard = (param)=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/TableCard.tsx",
-                                lineNumber: 52,
+                                lineNumber: 48,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -350,13 +342,13 @@ const TableCard = (param)=>{
                                 children: " / slot"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/TableCard.tsx",
-                                lineNumber: 53,
+                                lineNumber: 49,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/TableCard.tsx",
-                        lineNumber: 51,
+                        lineNumber: 47,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -381,7 +373,7 @@ const TableCard = (param)=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/TableCard.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 55,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -389,13 +381,13 @@ const TableCard = (param)=>{
                                         children: table.section
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/TableCard.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 56,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/TableCard.tsx",
-                                lineNumber: 58,
+                                lineNumber: 54,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -403,13 +395,13 @@ const TableCard = (param)=>{
                                 children: table.type
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/TableCard.tsx",
-                                lineNumber: 62,
+                                lineNumber: 58,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/TableCard.tsx",
-                        lineNumber: 57,
+                        lineNumber: 53,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -426,7 +418,7 @@ const TableCard = (param)=>{
                                         className: "mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/TableCard.tsx",
-                                        lineNumber: 69,
+                                        lineNumber: 65,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -436,13 +428,13 @@ const TableCard = (param)=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/TableCard.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 66,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/TableCard.tsx",
-                                lineNumber: 68,
+                                lineNumber: 64,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -456,26 +448,26 @@ const TableCard = (param)=>{
                                         className: "mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/TableCard.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 69,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: table.location
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/TableCard.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 70,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/TableCard.tsx",
-                                lineNumber: 72,
+                                lineNumber: 68,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/TableCard.tsx",
-                        lineNumber: 67,
+                        lineNumber: 63,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -483,13 +475,13 @@ const TableCard = (param)=>{
                         children: table.description
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/TableCard.tsx",
-                        lineNumber: 78,
+                        lineNumber: 74,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/TableCard.tsx",
-                lineNumber: 56,
+                lineNumber: 52,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
