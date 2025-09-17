@@ -36,11 +36,7 @@ const TableCard: React.FC<TableCardProps> = ({ table }) => {
             <div className='relative h-48 overflow-hidden'>
                 <Image src={table.image} alt={`Table ${table.number}`} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105' />
 
-                {table.isWindow && (
-                    <p className='absolute top-4 left-4 bg-blue-500/90 text-white text-xs px-2.5 py-1 rounded-full'>
-                        Window View
-                    </p>
-                )}
+
 
                 {table.isAvailable && (
                     <p className='absolute top-4 right-4 bg-green-500/90 text-white text-xs px-2.5 py-1 rounded-full'>
